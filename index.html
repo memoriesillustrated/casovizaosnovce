@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="sr">
 <head>
@@ -11,8 +12,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+
+  <!-- Izbor jezika: stilovi su u ovom HTML fajlu -->
+  <style>
+    .language-switch {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px;
+      background: #fffaf1;
+      border: 1px solid #eadfce;
+      border-radius: 24px;
+      box-shadow: 0 3px 12px rgba(70, 55, 35, 0.12);
+    }
+
+    .language-switch button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-width: 40px;
+      min-height: 34px;
+      padding: 5px 9px;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      background: transparent;
+      color: #514537;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .language-switch button:hover {
+      background: #f5ead8;
+    }
+
+    .language-switch button[aria-pressed="true"] {
+      background: #f5ead8;
+      border-color: #c8a96e;
+    }
+
+    .language-switch button:focus-visible {
+      outline: 3px solid #6a9c78;
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .language-switch {
+        top: 8px;
+        right: 8px;
+        gap: 2px;
+        padding: 3px;
+      }
+
+      .language-switch button {
+        min-width: 34px;
+        min-height: 32px;
+        padding: 4px 6px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Dugmad za izbor jezika -->
+  <div class="language-switch" role="group" aria-label="Izbor jezika">
+    <button type="button" data-lang="sr" aria-pressed="true" aria-label="Srpski jezik">
+      <span aria-hidden="true">🇷🇸</span> SR
+    </button>
+    <button type="button" data-lang="en" aria-pressed="false" aria-label="English language">
+      <span aria-hidden="true">🇬🇧</span> EN
+    </button>
+  </div>
+
   <a class="skip-link" href="#glavni-sadrzaj">Preskoči na glavni sadržaj</a>
 
   <header class="site-header">
@@ -201,11 +280,345 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <a class="footer-brand" href="#pocetna">📖 Časovi za osnovce</a>
-      <div align=center><a href='https://www.counter12.com'><img src='https://www.counter12.com/img-W5BCYzZwAC7Za7Wa-57.gif' border='0' alt='free counter'></a><script type='text/javascript' src='https://www.counter12.com/ad.js?id=W5BCYzZwAC7Za7Wa'></script></div>
+      <div align="center"><a href="https://www.counter12.com"><img src="https://www.counter12.com/img-W5BCYzZwAC7Za7Wa-57.gif" border="0" alt="Besplatan brojač poseta"></a><script type="text/javascript" src="https://www.counter12.com/ad.js?id=W5BCYzZwAC7Za7Wa"></script></div>
       <p>Podrška u učenju za učenike od 1. do 4. razreda.</p>
       <a href="#pocetna" class="back-top">Nazad na vrh ↑</a>
       <small>© <span id="year"></span> Časovi za osnovce</small>
     </div>
   </footer>
+
+  <!-- Prevod cele stranice -->
+  <script>
+    (() => {
+      const translations = {
+        sr: {
+          pageTitle: "Časovi za osnovce | Individualna podrška u učenju",
+          description: "Individualni časovi za učenike od 1. do 4. razreda osnovne škole u Beogradu i onlajn. Pomoć u učenju, domaćim zadacima i pripremi za kontrolne zadatke.",
+          skip: "Preskoči na glavni sadržaj",
+          brand: "Časovi za osnovce",
+          grade: "1. – 4. razred",
+          openMenu: "Otvori navigaciju",
+          closeMenu: "Zatvori navigaciju",
+          navLabel: "Glavna navigacija",
+          home: "Početna",
+          about: "O meni",
+          supportNav: "Kako radim",
+          contact: "Kontakt",
+          eyebrow: "Individualni časovi za osnovce",
+          heroTitle: 'Učenje uz podršku, <span>sigurnost i osmeh.</span>',
+          heroLead: "Časovi za učenike od 1. do 4. razreda osnovne škole, prilagođeni uzrastu, predznanju i potrebama svakog deteta.",
+          meetingButton: 'Dogovorite upoznavanje <span aria-hidden="true">→</span>',
+          howLink: "Pogledajte kako radim",
+          freeNote: '<span aria-hidden="true">💛</span> Prvi dolazak i razgovor su besplatni.',
+          heroAlt: "Ilustracija učiteljice koja pomaže detetu tokom učenja",
+          floatingOne: "Svaki korak se računa! ⭐",
+          floatingTwo: "Učimo svojim tempom 🌱",
+          supportKicker: "Podrška koja gradi samopouzdanje",
+          supportTitle: "Kako mogu da pomognem?",
+          supportIntro: "Radimo na onome što je učeniku potrebno, korak po korak.",
+          schoolTitle: "Školsko gradivo",
+          schoolText: "Pomoć pri usvajanju i razumevanju gradiva.",
+          homeworkTitle: "Domaći zadaci",
+          homeworkText: "Rad uz objašnjenja koja podstiču razumevanje.",
+          testsTitle: "Priprema za kontrolne",
+          testsText: "Vežbanje, ponavljanje i priprema za bolji uspeh na testu.",
+          revisionTitle: "Utvrđivanje gradiva",
+          revisionText: "Dodatni zadaci i vežbe za sigurnije znanje.",
+          habitsTitle: "Radne navike",
+          habitsText: "Razvijanje samostalnosti, radnih navika i samopouzdanja.",
+          subjectTitle: "Učenje prema potrebi.",
+          subjectText: "Časovi mogu obuhvatiti bilo koji predmet, u zavisnosti od toga šta je učeniku trenutno potrebno.",
+          aboutKicker: "O meni",
+          aboutTitle: "Iskustvo, strpljenje i pristup prilagođen detetu.",
+          aboutP1: "Master učiteljica i doktorand na Učiteljskom fakultetu, sa iskustvom rada u školi, produženom boravku i kreativnim radionicama. Držim individualne časove za učenike od 1. do 4. razreda osnovne škole.",
+          aboutP2: "Pristup prilagođavam uzrastu, predznanju i potrebama svakog učenika, sa ciljem da gradivo bude usvojeno sa razumevanjem, učenje postepeno postane samostalnije, a svaki učenik stekne samopouzdanje i navike koje će ga pratiti tokom celog života.",
+          aboutCaption: "Znanje raste<br>uz podršku.",
+          point1: "Individualan pristup",
+          point2: "Rad tempom deteta",
+          point3: "Podsticajno okruženje",
+          detailsKicker: "Zajedno gradimo navike i samopouzdanje",
+          detailsTitle: "Kako su časovi organizovani?",
+          where: "Gde?",
+          inPerson: "<strong>Uživo u Beogradu</strong> — dolazim na Vašu adresu.",
+          online: "<strong>Onlajn</strong> — ako se nalazite van Beograda.",
+          duration: "Trajanje",
+          durationP1: 'Jedan čas traje <strong>45 minuta</strong>.',
+          durationP2: "Dostupan je i dvočas u trajanju od 90 minuta.",
+          price: "Cena",
+          perLesson: "/ čas",
+          doubleLesson: "/ dvočas (90 min.)",
+          firstStep: "Prvi korak",
+          meet: "Upoznajmo se",
+          freeVisit: 'Pre prvog časa dolazim da se upoznamo, razgovaramo i procenim šta je Vašem detetu potrebno. <strong>Prvi dolazak i razgovor se ne naplaćuju.</strong>',
+          contactTitle: "Pišite mi ili pozovite kako bismo se dogovorili za upoznavanje i razgovor.",
+          contactIntro: "Možete me pozvati, poslati poruku ili mejl.",
+          phone: "Telefon / SMS / Viber",
+          email: "E-mail",
+          emailButton: 'Pošaljite e-mail <span aria-hidden="true">→</span>',
+          paperOne: "Mali koraci,",
+          paperTwo: "veliki uspesi!",
+          counterAlt: "Besplatan brojač poseta",
+          footerText: "Podrška u učenju za učenike od 1. do 4. razreda.",
+          backTop: "Nazad na vrh ↑",
+          languageLabel: "Izbor jezika",
+          srLabel: "Srpski jezik",
+          enLabel: "English language"
+        },
+
+        en: {
+          pageTitle: "Tutoring for Primary School Children | Individual Learning Support",
+          description: "Individual tutoring for children in grades 1–4 in Belgrade and online. Help with learning, homework and test preparation.",
+          skip: "Skip to main content",
+          brand: "Primary School Tutoring",
+          grade: "Grades 1–4",
+          openMenu: "Open navigation",
+          closeMenu: "Close navigation",
+          navLabel: "Main navigation",
+          home: "Home",
+          about: "About me",
+          supportNav: "My approach",
+          contact: "Contact",
+          eyebrow: "Individual tutoring for primary school children",
+          heroTitle: 'Learning with support, <span>confidence and a smile.</span>',
+          heroLead: "Tutoring for children in grades 1–4, tailored to each child's age, existing knowledge and individual needs.",
+          meetingButton: 'Arrange an introduction <span aria-hidden="true">→</span>',
+          howLink: "Discover my approach",
+          freeNote: '<span aria-hidden="true">💛</span> The first visit and consultation are free.',
+          heroAlt: "Illustration of a teacher helping a child learn",
+          floatingOne: "Every step counts! ⭐",
+          floatingTwo: "Learning at our own pace 🌱",
+          supportKicker: "Support that builds confidence",
+          supportTitle: "How can I help?",
+          supportIntro: "We focus on what each student needs, one step at a time.",
+          schoolTitle: "School subjects",
+          schoolText: "Help with learning and understanding school material.",
+          homeworkTitle: "Homework",
+          homeworkText: "Guided practice with explanations that encourage understanding.",
+          testsTitle: "Test preparation",
+          testsText: "Practice, revision and preparation for better test results.",
+          revisionTitle: "Revision and practice",
+          revisionText: "Additional tasks and exercises to build confidence and knowledge.",
+          habitsTitle: "Study habits",
+          habitsText: "Developing independence, good study habits and self-confidence.",
+          subjectTitle: "Learning tailored to individual needs.",
+          subjectText: "Sessions can cover any school subject, depending on what the student needs at the time.",
+          aboutKicker: "About me",
+          aboutTitle: "Experience, patience and a child-centred approach.",
+          aboutP1: "I hold a master's degree in primary education and am a doctoral student at the Faculty of Education. I have experience working in schools, after-school programmes and creative workshops. I provide individual tutoring for children in grades 1–4.",
+          aboutP2: "I tailor my approach to each student's age, prior knowledge and needs. My goal is to help children understand what they learn, become increasingly independent and develop the confidence and habits that will support them throughout their lives.",
+          aboutCaption: "Knowledge grows<br>with support.",
+          point1: "Individual approach",
+          point2: "Learning at the child's pace",
+          point3: "Encouraging environment",
+          detailsKicker: "Building good habits and confidence together",
+          detailsTitle: "How are the lessons organised?",
+          where: "Where?",
+          inPerson: "<strong>In person in Belgrade</strong> — I come to your home.",
+          online: "<strong>Online</strong> — for families outside Belgrade.",
+          duration: "Duration",
+          durationP1: 'Each lesson lasts <strong>45 minutes</strong>.',
+          durationP2: "A double session lasting 90 minutes is also available.",
+          price: "Price",
+          perLesson: "/ lesson",
+          doubleLesson: "/ double session (90 min.)",
+          firstStep: "The first step",
+          meet: "Let's meet",
+          freeVisit: 'Before the first lesson, I visit so we can meet, talk and discuss what your child needs. <strong>The first visit and consultation are free.</strong>',
+          contactTitle: "Get in touch by message or phone to arrange an introductory meeting.",
+          contactIntro: "You can call, send a message or email me.",
+          phone: "Phone / SMS / Viber",
+          email: "Email",
+          emailButton: 'Send an email <span aria-hidden="true">→</span>',
+          paperOne: "Small steps,",
+          paperTwo: "big achievements!",
+          counterAlt: "Free visitor counter",
+          footerText: "Learning support for children in grades 1–4.",
+          backTop: "Back to top ↑",
+          languageLabel: "Choose language",
+          srLabel: "Serbian language",
+          enLabel: "English language"
+        }
+      };
+
+      const $ = (selector) => document.querySelector(selector);
+      const $$ = (selector) => document.querySelectorAll(selector);
+
+      function setText(selector, value) {
+        const element = $(selector);
+        if (element) element.innerHTML = value;
+      }
+
+      function setLanguage(lang) {
+        const t = translations[lang] || translations.sr;
+
+        document.documentElement.lang = lang;
+        document.title = t.pageTitle;
+
+        const description = $('meta[name="description"]');
+        if (description) description.content = t.description;
+
+        setText(".skip-link", t.skip);
+        setText(".brand strong", t.brand);
+        setText(".brand small", t.grade);
+
+        const brand = $(".brand");
+        if (brand) brand.setAttribute("aria-label", t.brand + (lang === "sr" ? " — početna strana" : " — home page"));
+
+        const menu = $(".menu-toggle");
+        if (menu) {
+          menu.setAttribute(
+            "aria-label",
+            menu.getAttribute("aria-expanded") === "true" ? t.closeMenu : t.openMenu
+          );
+        }
+
+        const nav = $("#main-nav");
+        if (nav) nav.setAttribute("aria-label", t.navLabel);
+
+        const navLinks = $$("#main-nav a");
+        [t.home, t.about, t.supportNav, t.contact].forEach((text, i) => {
+          if (navLinks[i]) navLinks[i].textContent = text;
+        });
+
+        setText(".eyebrow", '<span class="eyebrow-dot"></span> ' + t.eyebrow);
+        setText(".hero-copy h1", t.heroTitle);
+        setText(".hero-lead", t.heroLead);
+        setText(".hero-actions .button-primary", t.meetingButton);
+        setText(".hero-actions .text-link", t.howLink);
+        setText(".hero-note", t.freeNote);
+
+        const heroImage = $(".hero-art img");
+        if (heroImage) heroImage.alt = t.heroAlt;
+
+        setText(".note-one", t.floatingOne);
+        setText(".note-two", t.floatingTwo);
+
+        setText(".support-section .section-kicker", t.supportKicker);
+        setText(".support-section h2", t.supportTitle);
+        setText(".support-section .section-heading p", t.supportIntro);
+
+        const cards = $$(".support-card");
+        const cardTitles = [t.schoolTitle, t.homeworkTitle, t.testsTitle, t.revisionTitle, t.habitsTitle];
+        const cardTexts = [t.schoolText, t.homeworkText, t.testsText, t.revisionText, t.habitsText];
+
+        cards.forEach((card, i) => {
+          if (card.querySelector("h3")) card.querySelector("h3").textContent = cardTitles[i];
+          if (card.querySelector("p")) card.querySelector("p").textContent = cardTexts[i];
+        });
+
+        setText(".subject-note strong", t.subjectTitle);
+        const subjectParagraph = $(".subject-note p");
+        if (subjectParagraph) {
+          subjectParagraph.innerHTML = "<strong>" + t.subjectTitle + "</strong> " + t.subjectText;
+        }
+
+        setText(".about-copy .section-kicker", t.aboutKicker);
+        setText(".about-copy h2", t.aboutTitle);
+
+        const aboutParagraphs = $$(".about-copy > p");
+        if (aboutParagraphs[0]) aboutParagraphs[0].textContent = t.aboutP1;
+        if (aboutParagraphs[1]) aboutParagraphs[1].textContent = t.aboutP2;
+
+        setText(".about-mark-caption", t.aboutCaption);
+
+        const points = $$(".about-points > span");
+        [t.point1, t.point2, t.point3].forEach((text, i) => {
+          if (points[i]) points[i].innerHTML = '<span aria-hidden="true">✓</span> ' + text;
+        });
+
+        setText(".details-section .section-kicker", t.detailsKicker);
+        setText(".details-section .section-heading h2", t.detailsTitle);
+
+        const detailCards = $$(".detail-card");
+        if (detailCards[0]) {
+          setTextIn(detailCards[0], "h3", t.where);
+          const p = detailCards[0].querySelectorAll("p");
+          if (p[0]) p[0].innerHTML = t.inPerson;
+          if (p[1]) p[1].innerHTML = t.online;
+        }
+
+        if (detailCards[1]) {
+          setTextIn(detailCards[1], "h3", t.duration);
+          const p = detailCards[1].querySelectorAll("p");
+          if (p[0]) p[0].innerHTML = t.durationP1;
+          if (p[1]) p[1].textContent = t.durationP2;
+        }
+
+        if (detailCards[2]) {
+          setTextIn(detailCards[2], "h3", t.price);
+          const priceLines = detailCards[2].querySelectorAll(".price-line span");
+          if (priceLines[0]) priceLines[0].textContent = t.perLesson;
+          if (priceLines[1]) priceLines[1].textContent = t.doubleLesson;
+        }
+
+        setText(".free-visit .section-kicker", t.firstStep);
+        setText(".free-visit h2", t.meet);
+        const freeVisitParagraph = $(".free-visit p");
+        if (freeVisitParagraph) freeVisitParagraph.innerHTML = t.freeVisit;
+
+        setText(".contact-copy .section-kicker", t.contact);
+        setText(".contact-copy h2", t.contactTitle);
+        setText(".contact-copy > p", t.contactIntro);
+
+        const contactLabels = $$(".contact-item small");
+        if (contactLabels[0]) contactLabels[0].textContent = t.phone;
+        if (contactLabels[1]) contactLabels[1].textContent = t.email;
+
+        setText(".email-button", t.emailButton);
+        setText(".paper-title", t.paperOne);
+        setText(".paper-title-two", t.paperTwo);
+
+        setText(".footer-brand", "📖 " + t.brand);
+        setText(".footer-inner > p", t.footerText);
+        setText(".back-top", t.backTop);
+
+        const counterImage = $('footer img[alt]');
+        if (counterImage) counterImage.alt = t.counterAlt;
+
+        const languageGroup = $(".language-switch");
+        if (languageGroup) languageGroup.setAttribute("aria-label", t.languageLabel);
+
+        const srButton = $('[data-lang="sr"]');
+        const enButton = $('[data-lang="en"]');
+
+        if (srButton) {
+          srButton.setAttribute("aria-pressed", String(lang === "sr"));
+          srButton.setAttribute("aria-label", t.srLabel);
+        }
+
+        if (enButton) {
+          enButton.setAttribute("aria-pressed", String(lang === "en"));
+          enButton.setAttribute("aria-label", t.enLabel);
+        }
+
+        try {
+          localStorage.setItem("site-language", lang);
+        } catch (error) {
+          // Izbor jezika i dalje radi ako memorisanje nije dostupno.
+        }
+      }
+
+      function setTextIn(parent, selector, text) {
+        const element = parent.querySelector(selector);
+        if (element) element.textContent = text;
+      }
+
+      $$(".language-switch button").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.lang));
+      });
+
+      // Poštuje ranije izabran jezik; podrazumevani je srpski.
+      let savedLanguage = "sr";
+
+      try {
+        const saved = localStorage.getItem("site-language");
+        if (saved === "sr" || saved === "en") savedLanguage = saved;
+      } catch (error) {
+        // Podrazumevani jezik ostaje srpski.
+      }
+
+      setLanguage(savedLanguage);
+    })();
+  </script>
 </body>
 </html>

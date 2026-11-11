@@ -173,7 +173,7 @@ body{font-family:var(--sans);line-height:1.65}
 .language-switch{border-radius:4px}
 .language-switch button{border-radius:2px}
 .language-switch button[aria-pressed=true]{background:var(--ink)}
-.hero{padding-top:105px;padding-bottom:110px;background:#f5f7f8}
+.hero{padding-top:105px;padding-bottom:110px;background:#DFE7E9}
 .hero-grid{grid-template-columns:1.1fr .9fr;gap:100px}
 h1{font-family:var(--serif);font-size:clamp(48px,5vw,68px);letter-spacing:-.04em}
 h1 em{font-style:normal;color:var(--accent)}
@@ -188,6 +188,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .about-section{background:#f5f7f8}
 .about-mark{background:#e4ebed;border-radius:0}
 .about-initial{font-family:var(--serif);color:#587486}
+.about-illustration{display:block;width:min(100%,280px);max-height:250px;object-fit:contain;margin:0 auto 12px}
 .details-grid{border-top:0;border-bottom:0;gap:14px}
 .detail-card{background:#f6f8f9;border:1px solid var(--line)!important}
 .detail-icon{background:#e5edf0;color:var(--accent);border-radius:2px}
@@ -208,7 +209,7 @@ h1 em{font-style:normal;color:var(--accent)}
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="#pocetna" aria-label="Časovi za osnovce — početna strana">
-      <span class="brand-symbol" aria-hidden="true">📖</span>
+      <span class="brand-symbol" aria-hidden="true">Č.</span>
       <span><strong data-i18n="brand">Časovi za osnovce</strong><small data-i18n="grade">1. – 4. razred</small></span>
     </a>
     <button class="menu-toggle" type="button" aria-label="Otvori navigaciju" aria-expanded="false" aria-controls="main-nav">
@@ -272,7 +273,7 @@ h1 em{font-style:normal;color:var(--accent)}
 
   <section class="section about-section" id="o-meni">
     <div class="container about-grid">
-      <div class="about-mark" aria-hidden="true"><span class="about-initial">U</span><span class="about-mark-caption" data-i18n="aboutCaption">Znanje raste<br>uz podršku.</span></div>
+      <div class="about-mark" aria-hidden="true"><img class="about-illustration" src="assets/ilustracija4.png" alt=""><span class="about-mark-caption" data-i18n="aboutCaption">Znanje raste<br>uz podršku.</span></div>
       <div class="about-copy">
         <p class="section-kicker" data-i18n="aboutKicker">O meni</p>
         <h2 data-i18n="aboutTitle">Iskustvo, strpljenje i pristup prilagođen detetu.</h2>
@@ -317,7 +318,7 @@ h1 em{font-style:normal;color:var(--accent)}
 </main>
 
 <footer class="site-footer"><div class="container footer-inner">
-  <a class="footer-brand" href="#pocetna">📖<span data-i18n="brand">Časovi za osnovce</span></a>
+  <a class="footer-brand" href="#pocetna">Č. <span data-i18n="brand">Časovi za osnovce</span></a>
   <div class="counter"><a href="https://www.counter12.com"><img src="https://www.counter12.com/img-W5BCYzZwAC7Za7Wa-57.gif" border="0" alt="Besplatan brojač poseta" data-i18n-alt="counterAlt"></a><script src="https://www.counter12.com/ad.js?id=W5BCYzZwAC7Za7Wa"></script></div>
   <p data-i18n="footerText">Podrška u učenju za učenike od 1. do 4. razreda.</p>
   <a href="#pocetna" class="back-top" data-i18n="backTop">Nazad na vrh ↑</a>
@@ -336,7 +337,7 @@ h1 em{font-style:normal;color:var(--accent)}
   heroLead:"Časovi za učenike od 1. do 4. razreda osnovne škole, prilagođeni uzrastu, predznanju i potrebama svakog deteta.",
   meetingButton:'Dogovorite upoznavanje <span aria-hidden="true">→</span>',howLink:"Pogledajte kako radim",
   freeNote:'<span aria-hidden="true">♡</span> Prvi dolazak i razgovor su besplatni.',
-  floatingOne:"Svaki korak se računa! ⭐",floatingTwo:"Učimo svojim tempom 🌱",
+  floatingOne:"Svaki korak se računa! ⭐",floatingTwo:"Učimo svojim tempom 🌼",
   supportKicker:"Podrška koja gradi samopouzdanje",supportTitle:"Kako mogu da pomognem?",supportIntro:"Radimo na onome što je učeniku potrebno, korak po korak.",
   schoolTitle:"Školsko gradivo",schoolText:"Pomoć pri usvajanju i razumevanju gradiva.",homeworkTitle:"Domaći zadaci",homeworkText:"Rad uz objašnjenja koja podstiču razumevanje.",
   testsTitle:"Priprema za kontrolne",testsText:"Vežbanje, ponavljanje i priprema za bolji uspeh na testu.",
@@ -366,7 +367,7 @@ h1 em{font-style:normal;color:var(--accent)}
   heroLead:"Tutoring for children in grades K-12, tailored to each child's age, existing knowledge and individual needs.",
   meetingButton:'Arrange an introduction <span aria-hidden="true">→</span>',howLink:"Discover my approach",
   freeNote:'<span aria-hidden="true">♡</span> The first visit and consultation are free.',
-  floatingOne:"Every step counts! ⭐",floatingTwo:"Learning at our own pace 🌱",
+  floatingOne:"Every step counts! ⭐",floatingTwo:"Learning at our own pace 🌼",
   supportKicker:"Support that builds confidence",supportTitle:"How can I help?",supportIntro:"We focus on what each student needs, one step at a time.",
   schoolTitle:"School subjects",schoolText:"Help with learning and understanding school material.",homeworkTitle:"Homework",homeworkText:"Guided practice with explanations that encourage understanding.",
   testsTitle:"Test preparation",testsText:"Practice, revision and preparation for better test results.",

@@ -83,7 +83,7 @@ h1 span { color: #4c8b6c; }
 .subject-note-icon { flex: 0 0 52px; display: grid; place-items: center; width: 52px; height: 52px; background: white; border-radius: 16px; font-size: 1.6rem; }
 .subject-note p { margin: 0; color: var(--ink-soft); }
 .subject-note strong { color: var(--ink); }
-.about-section { background: #f8fbf8; }
+.about-section { background: #E4EBED; }
 .about-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 72px; align-items: center; }
 .about-mark { position: relative; display: grid; place-items: center; min-height: 340px; border-radius: 32px; background: linear-gradient(145deg, #dff2e4, #e6f4fb); overflow: hidden; }
 .about-mark::before, .about-mark::after { content: ""; position: absolute; border: 1px solid rgba(21,61,96,.1); border-radius: 50%; width: 280px; height: 280px; }

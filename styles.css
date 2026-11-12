@@ -204,3 +204,93 @@ h1 em{font-style:normal;color:var(--accent)}
   object-fit: contain;
   margin: 0 auto 12px;
 }
+
+/* MOBILNA OPTIMIZACIJA – završne korekcije */
+
+@media (max-width: 800px) {
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero {
+    padding-top: 62px;
+    padding-bottom: 75px;
+  }
+
+  .hero-copy,
+  .hero-art {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .art-frame {
+    width: 100%;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 11vw, 45px);
+  }
+
+  .hero-art {
+    padding-left: 10px;
+    padding-right: 0;
+  }
+
+  .art-frame img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-card {
+    padding: 22px 10px;
+  }
+
+  .contact-paper {
+    max-width: calc(100% - 40px);
+  }
+
+  .language-switch {
+    z-index: 10001;
+  }
+}

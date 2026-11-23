@@ -9,6 +9,33 @@
 <link rel="icon" type="image/png" href="assets/favicon1.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* Cenovnik — stilovi su ovde kako styles.css ostaje neizmenjen. */
+.details-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pricing-section{background:#f5f7f8;border-top:1px solid #e2e7eb;border-bottom:1px solid #e2e7eb}
+.pricing-section .section-heading{margin-bottom:42px}
+.pricing-block{max-width:900px;margin:0 auto}
+.pricing-subtitle{margin:0 0 18px;font-family:var(--serif);font-size:25px;font-weight:400;color:var(--ink)}
+.individual-prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.price-option,.monthly-price{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#fff;border:1px solid var(--line);padding:22px 25px}
+.price-option{min-height:112px;border-top:2px solid #9db8c6}
+.price-option h4,.monthly-price h4{margin:0 0 3px;font-size:16px;font-weight:700;color:var(--ink)}
+.price-option p,.monthly-price p{margin:0;color:var(--muted);font-size:13px}
+.price-option>strong,.monthly-price>strong{flex:0 0 auto;font-family:var(--serif);font-size:25px;font-weight:500;color:var(--accent);white-space:nowrap}
+.price-option>strong span,.monthly-price>strong span{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.04em}
+.monthly-block{margin-top:44px}
+.monthly-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:18px}
+.monthly-heading .pricing-subtitle{margin:0}
+.monthly-heading p{margin:0;color:var(--muted);font-size:13px}
+.monthly-prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.monthly-price{min-height:94px;padding:18px 21px}
+.monthly-price:last-child{grid-column:1/-1}
+.monthly-price>strong{font-size:23px}
+@media(max-width:800px){.details-grid{grid-template-columns:1fr}.individual-prices,.monthly-prices{grid-template-columns:1fr}.monthly-price:last-child{grid-column:auto}.monthly-heading{align-items:flex-start;flex-direction:column;gap:5px}}
+@media(max-width:480px){.price-option,.monthly-price{padding:17px 16px;gap:10px}.price-option>strong,.monthly-price>strong{font-size:21px}.pricing-subtitle{font-size:23px}}
+</style>
+
 </head>
 <body class="minimal">
 <div class="language-switch" role="group" aria-label="Izbor jezika">
@@ -30,6 +57,7 @@
       <a href="#pocetna" data-i18n="home">Početna</a>
       <a href="#o-meni" data-i18n="about">O meni</a>
       <a href="#podrska" data-i18n="supportNav">Kako radim</a>
+      <a href="#cenovnik" data-i18n="pricingNav">Cenovnik</a>
       <a href="#kontakt" data-i18n="contact">Kontakt</a>
     </nav>
   </div>
@@ -130,7 +158,43 @@
       <div class="details-grid">
         <article class="detail-card"><span class="detail-icon" aria-hidden="true">⌖</span><div><h3 data-i18n="where">Gde?</h3><p data-i18n="inPerson"><strong>Uživo u Beogradu</strong> — dolazim na Vašu adresu.</p><p data-i18n="online"><strong>Onlajn</strong> — ako se nalazite van Beograda.</p></div></article>
         <article class="detail-card"><span class="detail-icon" aria-hidden="true">◷</span><div><h3 data-i18n="duration">Trajanje</h3><p data-i18n="durationP1">Jedan čas traje <strong>45 minuta</strong>.</p><p data-i18n="durationP2">Dostupan je i dvočas u trajanju od 90 minuta.</p></div></article>
-        <article class="detail-card price-card"><span class="detail-icon" aria-hidden="true">₊</span><div><h3 data-i18n="price">Cena</h3><p class="price-line"><strong>2.000 din.</strong> <span data-i18n="perLesson">/ čas</span></p><p class="price-line"><strong>3.500 din.</strong> <span data-i18n="doubleLesson">/ dvočas (90 min.)</span></p></div></article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section pricing-section" id="cenovnik">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-kicker" data-i18n="pricingKicker">Jasne cene, bez iznenađenja</p>
+        <h2 data-i18n="pricingTitle">Cenovnik</h2>
+        <p data-i18n="pricingIntro">Izaberite oblik rada koji najviše odgovara potrebama Vašeg deteta.</p>
+      </div>
+      <div class="pricing-block">
+        <h3 class="pricing-subtitle" data-i18n="individualTitle">Pojedinačni časovi</h3>
+        <div class="individual-prices">
+          <article class="price-option">
+            <div><h4 data-i18n="singleLesson">Individualni čas</h4><p data-i18n="singleDuration">45 minuta</p></div>
+            <strong>2.400 <span>RSD</span></strong>
+          </article>
+          <article class="price-option">
+            <div><h4 data-i18n="doubleLessonTitle">Individualni dvočas</h4><p data-i18n="doubleDuration">90 minuta</p></div>
+            <strong>4.800 <span>RSD</span></strong>
+          </article>
+        </div>
+      </div>
+      <div class="pricing-block monthly-block">
+        <div class="monthly-heading">
+          <h3 class="pricing-subtitle" data-i18n="monthlyTitle">Mesečni paketi</h3>
+          <p data-i18n="monthlyNote">Plaćanje 1. u mesecu za tekući mesec.</p>
+        </div>
+        <div class="monthly-prices">
+          <article class="monthly-price"><div><h4 data-i18n="packageOne">Jedan čas nedeljno</h4><p data-i18n="packageOneDetail">2.000 × 4 časa mesečno</p></div><strong>8.000 <span>RSD</span></strong></article>
+          <article class="monthly-price"><div><h4 data-i18n="packageTwo">Dva časa nedeljno</h4><p data-i18n="packageTwoDetail">1.800 × 8 časova</p></div><strong>14.400 <span>RSD</span></strong></article>
+          <article class="monthly-price"><div><h4 data-i18n="packageThree">Dva dvočasa nedeljno</h4><p data-i18n="packageThreeDetail">1.500 × 16 časova</p></div><strong>24.000 <span>RSD</span></strong></article>
+          <article class="monthly-price"><div><h4 data-i18n="packageFour">Tri časa nedeljno</h4><p data-i18n="packageFourDetail">1.700 × 12 časova</p></div><strong>20.400 <span>RSD</span></strong></article>
+          <article class="monthly-price"><div><h4 data-i18n="packageFive">Tri dvočasa nedeljno</h4><p data-i18n="packageFiveDetail">1.400 × 24 časa</p></div><strong>33.600 <span>RSD</span></strong></article>
+        </div>
       </div>
     </div>
   </section>
@@ -169,7 +233,7 @@
   pageTitle:"Časovi za osnovce | Individualna podrška u učenju",
   description:"Individualni časovi za učenike od 1. do 4. razreda osnovne škole u Beogradu i onlajn. Pomoć u učenju, domaćim zadacima i pripremi za kontrolne zadatke.",
   skip:"Preskoči na glavni sadržaj",brand:"Časovi za osnovce",grade:"1. – 4. razred",
-  openMenu:"Otvori navigaciju",closeMenu:"Zatvori navigaciju",home:"Početna",about:"O meni",supportNav:"Kako radim",contact:"Kontakt",
+  openMenu:"Otvori navigaciju",closeMenu:"Zatvori navigaciju",home:"Početna",about:"O meni",supportNav:"Kako radim",pricingNav:"Cenovnik",contact:"Kontakt",
   eyebrow:"Individualni časovi za osnovce",heroTitle:"Učenje uz podršku, <em>sigurnost i osmeh.</em>",
   heroLead:"Časovi za učenike od 1. do 4. razreda osnovne škole, prilagođeni uzrastu, predznanju i potrebama svakog deteta.",
   meetingButton:'Dogovorite upoznavanje <span aria-hidden="true">→</span>',howLink:"Pogledajte kako radim",
@@ -187,7 +251,12 @@
   detailsKicker:"Zajedno gradimo navike i samopouzdanje",detailsTitle:"Kako su časovi organizovani?",where:"Gde?",
   inPerson:"<strong>Uživo u Beogradu</strong> — dolazim na Vašu adresu.",online:"<strong>Onlajn</strong> — ako se nalazite van Beograda.",
   duration:"Trajanje",durationP1:'Jedan čas traje <strong>45 minuta</strong>.',durationP2:"Dostupan je i dvočas u trajanju od 90 minuta.",
-  price:"Cena",perLesson:"/ čas",doubleLesson:"/ dvočas (90 min.)",firstStep:"Prvi korak",meet:"Upoznajmo se",
+  pricingKicker:"Jasne cene, bez iznenađenja",pricingTitle:"Cenovnik",pricingIntro:"Izaberite oblik rada koji najviše odgovara potrebama Vašeg deteta.",
+  individualTitle:"Pojedinačni časovi",singleLesson:"Individualni čas",singleDuration:"45 minuta",doubleLessonTitle:"Individualni dvočas",doubleDuration:"90 minuta",
+  monthlyTitle:"Mesečni paketi",monthlyNote:"Plaćanje 1. u mesecu za tekući mesec.",
+  packageOne:"Jedan čas nedeljno",packageOneDetail:"2.000 × 4 časa mesečno",packageTwo:"Dva časa nedeljno",packageTwoDetail:"1.800 × 8 časova",
+  packageThree:"Dva dvočasa nedeljno",packageThreeDetail:"1.500 × 16 časova",packageFour:"Tri časa nedeljno",packageFourDetail:"1.700 × 12 časova",
+  packageFive:"Tri dvočasa nedeljno",packageFiveDetail:"1.400 × 24 časa",firstStep:"Prvi korak",meet:"Upoznajmo se",
   freeVisit:'Pre prvog časa dolazim da se upoznamo, razgovaramo i procenim šta je Vašem detetu potrebno. <strong>Prvi dolazak i razgovor se ne naplaćuju.</strong>',
   contactTitle:"Pišite mi ili pozovite kako bismo se dogovorili za upoznavanje i razgovor.",contactIntro:"Možete me pozvati, poslati poruku ili mejl.",
   phone:"Telefon / SMS / Viber",email:"E-mail",emailButton:'Pošaljite e-mail <span aria-hidden="true">→</span>',
@@ -199,7 +268,7 @@
   pageTitle:"Tutoring for Primary School Children | Individual Learning Support",
   description:"Individual tutoring for children in Grades K-12 in Belgrade and online. Help with learning, homework and test preparation.",
   skip:"Skip to main content",brand:"Primary School Tutoring",grade:"grades K-12",
-  openMenu:"Open navigation",closeMenu:"Close navigation",home:"Home",about:"About me",supportNav:"My approach",contact:"Contact",
+  openMenu:"Open navigation",closeMenu:"Close navigation",home:"Home",about:"About me",supportNav:"My approach",pricingNav:"Pricing",contact:"Contact",
   eyebrow:"Individual tutoring for primary school children",heroTitle:"Learning with support, <em>confidence and a smile.</em>",
   heroLead:"Tutoring for children in grades K-12, tailored to each child's age, existing knowledge and individual needs.",
   meetingButton:'Arrange an introduction <span aria-hidden="true">→</span>',howLink:"Discover my approach",
@@ -217,7 +286,12 @@
   detailsKicker:"Building good habits and confidence together",detailsTitle:"How are the lessons organised?",where:"Where?",
   inPerson:"<strong>In person in Belgrade</strong> — I come to your home.",online:"<strong>Online</strong> — for families outside Belgrade.",
   duration:"Duration",durationP1:'Each lesson lasts <strong>45 minutes</strong>.',durationP2:"A double session lasting 90 minutes is also available.",
-  price:"Price",perLesson:"/ lesson",doubleLesson:"/ double session (90 min.)",firstStep:"The first step",meet:"Let's meet",
+  pricingKicker:"Clear pricing, no surprises",pricingTitle:"Pricing",pricingIntro:"Choose the lesson format that best suits your child's needs.",
+  individualTitle:"Individual lessons",singleLesson:"Single lesson",singleDuration:"45 minutes",doubleLessonTitle:"Double lesson",doubleDuration:"90 minutes",
+  monthlyTitle:"Monthly packages",monthlyNote:"Payment is due on the 1st of each month for that month.",
+  packageOne:"One lesson per week",packageOneDetail:"2,000 × 4 lessons per month",packageTwo:"Two lessons per week",packageTwoDetail:"1,800 × 8 lessons",
+  packageThree:"Two double lessons per week",packageThreeDetail:"1,500 × 16 lesson units",packageFour:"Three lessons per week",packageFourDetail:"1,700 × 12 lessons",
+  packageFive:"Three double lessons per week",packageFiveDetail:"1,400 × 24 lesson units",firstStep:"The first step",meet:"Let's meet",
   freeVisit:'Before the first lesson, I visit so we can meet, talk and discuss what your child needs. <strong>The first visit and consultation are free.</strong>',
   contactTitle:"Get in touch by message, phone or email to arrange an introductory meeting.",contactIntro:"You can call, send a message or email me.",
   phone:"Phone / SMS / Viber",email:"Email",emailButton:'Send an email <span aria-hidden="true">→</span>',
